@@ -1,0 +1,139 @@
+
+
+.board {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(8,auto);
+    grid-template-rows: repeat(8,auto);
+    border: 1px black solid;
+}
+
+.position {
+    width: 100%;
+    height: 100%;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.notation {
+    pointer-events: none;
+    position: absolute;
+    font-weight: bold;
+    margin-left: 3px;
+    z-index: 3;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.dark-notation {
+    color: rgb(33, 33, 246);
+}
+
+.light-notation {
+    color : rgb(240, 240, 240);
+}
+
+.light {
+    background-color: rgb(240, 240, 240);
+}
+
+.dark {
+    background-color: rgb(33, 33, 246);
+}
+
+.lastmove {
+    background-color: aquamarine;
+}
+
+.clicked {
+    box-shadow: inset 0px 0px 100px rgba(66, 66, 66, 0.508);
+}
+
+.piece {
+    background-size: cover;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.3s;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+/* White Pieces */
+.rook-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Chess_rlt45.svg/75px-Chess_rlt45.svg.png");
+}
+
+.knight-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Chess_nlt45.svg/75px-Chess_nlt45.svg.png");
+}
+
+.bishop-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Chess_blt45.svg/75px-Chess_blt45.svg.png");
+}
+
+.pawn-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Chess_plt45.svg/75px-Chess_plt45.svg.png");
+}
+
+.queen-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Chess_qlt45.svg/75px-Chess_qlt45.svg.png");
+}
+
+.king-white {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Chess_klt45.svg/75px-Chess_klt45.svg.png");
+}
+
+/* Black Pieces */
+.rook-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Chess_rdt45.svg/75px-Chess_rdt45.svg.png");
+}
+
+.knight-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Chess_ndt45.svg/75px-Chess_ndt45.svg.png");
+}
+
+.bishop-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Chess_bdt45.svg/75px-Chess_bdt45.svg.png");
+}
+
+.pawn-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Chess_pdt45.svg/75px-Chess_pdt45.svg.png");
+}
+
+.queen-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Chess_qdt45.svg/75px-Chess_qdt45.svg.png");
+}
+
+.king-black {
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Chess_kdt45.svg/75px-Chess_kdt45.svg.png");
+}
+
+
+
+.dot {
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#valid-moves-container {
+    position: absolute;
+}
+
+.valid-move {
+    position: absolute;
+    pointer-events: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    z-index: 2;
+    background-color: rgba(145, 145, 145, 0.464);
+    border-radius: 100%;
+}
