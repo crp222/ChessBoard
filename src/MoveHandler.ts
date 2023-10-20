@@ -12,9 +12,11 @@ export class MoveHandler {
     }
 
     updateState() {
-        this.state.judge.setfen(this.state.fen);
-        this.state.fen = this.state.judge.fenAfterMove(moveToString(this.state.lastMove));
-        FenUtils.syncFromFen(this.state);
+        if(this.state.validMoveElements){
+            this.state.judge.setfen(this.state.fen);
+            this.state.fen = this.state.judge.fenAfterMove(moveToString(this.state.lastMove));
+            FenUtils.syncFromFen(this.state);
+        }
     }
 
     valid(lastmove : Move) : boolean {
@@ -23,7 +25,7 @@ export class MoveHandler {
 
     listen() {
         if(this.state.moved){
-            var element : HTMLElement;
+            var element : HTMLElement | boolean;
             var from : Piece;
             var to : Position;
             this.state.fastDrawOnce = true;
@@ -33,18 +35,18 @@ export class MoveHandler {
                 to = this.state.dropZone;
             }else 
             if(this.state.clicked){
-                element = document.createElement("div");
+                element = true
                 from = this.state.clickedPiece;
                 to = this.state.clickedPosition;
             }
             
             if(this.state.forcedMove){
-                element = document.createElement("div");
+                element = true;
                 from = this.state.forcedPiece;
                 to = this.state.forcedPoisition;
             }
 
-            if(element) {
+            if(element && typeof element != "boolean") {
                 element.style.pointerEvents = "";
             }
             if(from && to && element && (from.position.row !== to.row || from.position.col !== to.col)){
